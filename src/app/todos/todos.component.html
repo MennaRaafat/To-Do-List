@@ -13,20 +13,21 @@
         <img src="../../assets/todo.png" />
         <h2>To-Do List App</h2>
       </div>
-      <form (submit)="addTodo()" id="styling">
+      <form id="styling">
         <div class="input-group w-75 mb-3">
           <input
             type="text"
             class="form-control"
             placeholder="Add Your To Do..."
-            name="inputToDo"
-            [(ngModel)]="inputToDo"
+            name="data"
+            [(ngModel)]="data"
           />
           <input
             class="btn bg-white"
             type="submit"
             value="Add To Do"
             class="todo-submit"
+            (click)="addTodo()"
           />
         </div>
       </form>

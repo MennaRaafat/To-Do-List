@@ -11,25 +11,25 @@ import { Todo } from './todo';
 export class TodosComponent {
 
 todos :Todo[]=[];
-inputToDo:String="";
+data:String="";
 
 deleteTodo(id:number){
 this.todos.splice(id,1);
 }
 
 completedTodo(id:number){
-this.todos.map((v,i)=>{
-if(id==i) v.completed = !v.completed;
-return v;
+this.todos.map((elem,i)=>{
+if(id===i) elem.completed = !elem.completed;
+return elem;
 })
 }
 
 addTodo(){
   this.todos.push({
-todo:this.inputToDo,
+todo:this.data,
 completed:false
   });
-  this.inputToDo=" ";
+  this.data=" ";
 }
 
 }
