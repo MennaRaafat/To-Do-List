@@ -34,7 +34,7 @@
 
       <div *ngFor="let todo of todos; let i = index" class="d-flex m-3">
         <div id="todo">
-          <input type="checkbox" (click)="completedTodo(i)" />
+          <input [disabled]="todo.completed == true" type="checkbox" (click)="completedTodo(i)" />
           <label [ngClass]="todo.completed == true ? 'checkTodo' : ''">{{
             todo.todo
           }}</label>
@@ -46,6 +46,7 @@
             (click)="deleteTodo(i)">
             Delete
           </button>
+
         </div>
       </div>
     </div>
