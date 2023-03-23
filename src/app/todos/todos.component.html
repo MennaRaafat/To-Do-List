@@ -2,53 +2,47 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
       rel="stylesheet"/>
-  </head>
+    </head>
 
   <body>
-    <div>
+   
+    <app-navbar></app-navbar>
+
+    <div id="inbox" >
       <div class="bg d-flex">
         <img src="../../assets/todo.png" />
         <h2>To-Do List App</h2>
       </div>
+ 
+      <h1 style="text-align: center;">{{userQuote}}</h1>
+
       <form id="styling">
         <div class="input-group w-75 mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Add Your To Do..."
+          <input type="text" class="form-control"placeholder="Add Your To Do..."
             name="data"
             [(ngModel)]="data"
           />
-          <input
-            class="btn bg-white"
-            type="submit"
-            value="Add To Do"
-            class="todo-submit"
-            (click)="addTodo()"
+          <input class="btn bg-white" type="submit" value="Add To Do" class="todo-submit" (click)="addTodo()"
           />
         </div>
       </form>
 
-      <div *ngFor="let todo of todos; let i = index" class="d-flex m-3">
+      <!-- <div *ngFor="let todo of _todo.todos; let i = index" class="d-flex m-3">
         <div id="todo">
-          <input [disabled]="todo.completed == true" type="checkbox" (click)="completedTodo(i)" />
-          <label [ngClass]="todo.completed == true ? 'checkTodo' : ''">{{
-            todo.todo
-          }}</label>
+          <input [disabled]="todo.completed == true" type="checkbox" />
+          <label [ngClass]="todo.completed == true ? 'checkTodo':''">
+            {{todo.todo}}
+          </label>
         </div>
         <div id="btn_todo">
-          <button
-            class="btn btn-outline-danger bg-danger text-white"
-            type="button"
-            (click)="deleteTodo(i)">
-            Delete
-          </button>
-
+          <a class="btn btn-outline-white bg-white text-white" type="button" style="margin-right:15px;" (click)="details(i)" [routerLink]="['/details,id']"><img src="../../assets/file.png" style="width: 20px; height: 20px;"></a>
+          <a class="btn btn-outline-white bg-white text-white" style="margin-right:15px;" type="button" (click)="addFav(i)"><img src="../../assets/favourite.png" style="width: 20px; height: 20px;"></a>
+          <a class="btn btn-outline-white bg-white text-white"type="button" (click)="deleteTodo(i)"><img src="../../assets/delete.png" style="width: 20px; height: 20px;"></a>
         </div>
-      </div>
+      </div> -->
+      <app-todo *ngFor="let todo of todos;" [todo]="todo"></app-todo>
     </div>
   </body>
 </html>

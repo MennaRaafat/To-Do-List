@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+
+*{
+  font-family: "Righteous", cursive;
+
+}
+.img-user{
+  width: 50px;
+  height: 50px;
+}
+
+.fav-icon{
+  width: 25px;
+}
+
+#inbox{
+  /* background-color: #245953; */
+background: linear-gradient(120deg, #245953, #084446);
+color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Righteous", cursive;
+}
+#styling {
+  text-align: center;
+  margin-bottom: 3%;
+  margin-left: 15%;
+}
+
+#todo {
+  margin-left: 15%;
+  width: 58%;
+}
+.bg img {
+  width: 50px;
+  height: 50px;
+}
+
+.form-control {
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+}
+
+.todo-submit {
+  border: none;
+}
+
+.bg {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.checkTodo {
+  text-decoration: line-through;
+  line-height: 15px;
+}

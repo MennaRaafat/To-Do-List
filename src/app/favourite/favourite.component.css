@@ -1,0 +1,29 @@
+#fav{
+  background: linear-gradient(120deg, #245953, #084446);
+  color: white;
+  /* margin: 0;
+  padding: 0; */
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Righteous", cursive;
+}
+
+#todo {
+    margin-left: 5%;
+    width: 68%;
+    margin-top: 1%;
+  }
+
+#todo-border{
+    /* margin:50%; */
+    /* left: -35%; */
+    border: 1px solid white;
+    width: 80%;
+    color: #245953;
+    border-radius: 15px;
+    background-color: white;
+}
+
+/* li:nth-child(2n){
+	background: #f7f7f7;
+} */

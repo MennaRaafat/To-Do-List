@@ -1,46 +1,4 @@
-* {
-  background-color: #245953;
-  background-size: 100%;
-  background-size: cover;
-  color: white;
-  font-family: "Righteous", cursive;
-}
-
-#styling {
-  text-align: center;
-  margin-bottom: 3%;
-  margin-left: 15%;
-}
-
-#todo {
-  margin-left: 15%;
-  width: 58%;
-}
-.bg img {
-  width: 50px;
-  height: 50px;
-}
-
-.form-control {
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 9px;
-}
-
-.todo-submit {
-  border: none;
-}
-
-.bg {
-  margin-top: 10%;
-  margin-bottom: 5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .checkTodo {
-  text-decoration: line-through;
-  line-height: 15px;
-}
+    text-decoration: line-through;
+    line-height: 15px;
+  }

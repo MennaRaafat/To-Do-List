@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+
+    <div id="fav">
+        <h1 class="m-5"style="text-align: center;">Your Favourites</h1>
+
+        <div id="todo-border" style="margin-right:60%;" *ngFor="let todo of _todo.todoFavourite; let i = index" class="d-flex m-3">
+            <div id="todo">
+              <input [disabled]="todo.completed == true" type="checkbox" />
+              <label [ngClass]="todo.completed == true ? 'checkTodo':''">
+                {{todo.todo}}
+              </label>
+            </div>
+            <div id="btn_todo">
+              <a class="btn btn-outline-white bg-white text-white" style="margin-right:15px;" type="button"><img src="../../assets/favourite.png" style="width: 20px; height: 20px;"></a>
+              <a class="btn btn-outline-white bg-white text-white"type="button"><img src="../../assets/delete.png" style="width: 20px; height: 20px;"></a>
+            </div>
+
+          </div>
+    </div>
+
+</body>
+</html>

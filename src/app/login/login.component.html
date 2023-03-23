@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+<body>
+  
+    <div class="login-box">
+        <h2>Login</h2>
+          <div class="user-box">
+            <input type="text" name="userInput" [(ngModel)]="userInput" required>
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="quoteInput" [(ngModel)]="quoteInput" required>
+            <label>Favourite Qoute</label>
+          </div>
+          <a [routerLink]="['/user']" (click)="addUser()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+      </div>
+</body>
+</html>

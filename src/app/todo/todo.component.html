@@ -1,0 +1,17 @@
+
+  <div class="d-flex m-3">
+    <div id="todo">
+      <input [disabled]="todo.completed == true" type="checkbox" />
+      <label [ngClass]="todo.completed == true ? 'checkTodo':''" > 
+        {{todo.todo}}
+        </label>
+
+     </div>
+    <div id="btn_todo"> 
+      <a class="btn btn-outline-white bg-white text-white" type="button" (click)="navigateToDetails()" style="margin-right:15px;"><img src="../../assets/file.png" style="width: 20px; height: 20px;"></a>
+      <a class="btn btn-outline-white bg-white text-white" style="margin-right:15px;" type="button" (click)="addFav(todo.id)"><img src="../../assets/favourite.png" style="width: 20px; height: 20px;"></a>
+      <a class="btn btn-outline-white bg-white text-white"type="button" (click)="deleteTodo(todo.id)" ><img src="../../assets/delete.png" style="width: 20px; height: 20px;"></a>
+    </div>
+  </div>
+
+  
