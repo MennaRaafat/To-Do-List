@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodosService } from '../todos.service';
+import { TodosService } from 'src/app/services/todos.service';
 
 @Component({
   selector: 'app-deleted',
@@ -9,6 +9,4 @@ import { TodosService } from '../todos.service';
 export class DeletedComponent {
 
 constructor(public _todo:TodosService){}
-
-
 }

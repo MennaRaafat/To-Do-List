@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { UsersService } from '../users.service';
-import { TodosService } from '../todos.service';
-import { TodoComponent } from '../todo/todo.component';
+
+import { TodoComponent } from 'src/app/components/todo/todo.component' ;
+import { TodosService } from 'src/app/services/todos.service';
+import { UsersService } from 'src/app/services/users.service';
 import { Todo } from './models/todo';
 @Component({
   selector: 'app-todos',
@@ -36,12 +37,8 @@ this._todo.todoCreate(this.data);
 // this._todo.deleteTodo(id);
 // }
 
-// completedTodo(id:number){
-// this.todos.map((elem,i)=>{
-// if(id===i) elem.completed = !elem.completed;
-// return elem;
-// })
-// }
+
+
 
 }
 

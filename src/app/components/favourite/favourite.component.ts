@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodosService } from '../todos.service';
+import { TodosService } from 'src/app/services/todos.service';
 
 @Component({
   selector: 'app-favourite',

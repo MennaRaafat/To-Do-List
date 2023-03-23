@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
-import { LoginComponent } from './login/login.component';
-import { FavouriteComponent } from './favourite/favourite.component';
-import { DeletedComponent } from './deleted/deleted.component';
-import { TodoComponent } from './todo/todo.component';
-import { TodoDetailsComponent } from './todo-details/todo-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { CompletedComponent } from './components/completed/completed.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { DeletedComponent } from './components/deleted/deleted.component';
+import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'user',component:TodosComponent},
   {path:'favourite',component:FavouriteComponent},
   {path:'delete',component:DeletedComponent},
   {path:'details/:id',component:TodoDetailsComponent},
-  // {path:'**'}
+  {path:'completed',component:CompletedComponent},
+  {path:'**',component:NotFoundComponent},
 ];
 
 @NgModule({

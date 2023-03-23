@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
-import { UsersService } from '../users.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { UsersService } from '../../services/users.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,8 +12,11 @@ export class LoginComponent {
 
   userInput:String="";
   quoteInput:String="";
-
-  constructor(private _user: UsersService) {
+  isLogged = false  ;
+  constructor(private _user: UsersService,private _auth:AuthService) {
+    this._auth.loggedIn$.subscribe((res)=>{
+      this.isLogged = res
+    })
   }
 
   addUser() {
@@ -20,5 +25,7 @@ export class LoginComponent {
       this.quoteInput
     );
   }
- 
+  change() {
+    this._auth.change()
+  } 
 }

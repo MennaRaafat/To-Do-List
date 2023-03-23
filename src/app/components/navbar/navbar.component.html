@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
 </head>
 <body>
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="float-start">
-          <a class="navbar-brand" href="#"><img class="img-user" src="../../assets/user.png"></a>
+          <a class="navbar-brand" href="#"><img class="img-user" src="../assets/user.png"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -19,14 +19,20 @@
           <div class="nav-right collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                 <a routerLink="/favourite" class="nav-link active" aria-current="page"><img class="fav-icon" src="../../assets/favourite.png">
+                 <a routerLink="/favourite" class="nav-link active" aria-current="page"><img class="fav-icon" src="../../assets/favourite.png">{{totalElm.totalFav()}}
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/delete" class="nav-link" href="#"><img src="../../assets/delete.png"></a>
+                <a routerLink="/delete" class="nav-link" href="#"><img src="../../assets/delete.png">{{totalElm.totalDel()}}</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/completed" class="nav-link" href="#" ><img src="../../assets/tasks.png">{{totalElm.percompleted()}}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">{{loggedUser}}</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/" class="nav-link">Logout</a>
               </li>
             </ul>
           </div>

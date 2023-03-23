@@ -1,0 +1,26 @@
+<body>
+    <app-navbar></app-navbar>
+
+    <div id="fav">
+        <h1 class="m-5"style="text-align: center;">Your Completed Todos</h1>
+
+
+
+        <div id="todo-border" style="margin-right:60%;" *ngFor="let usercom of userComp; let i = index" class="d-flex m-3">
+            <div id="todo">
+              <input [disabled]="usercom.completed == true" type="checkbox" />
+              <label [ngClass]="usercom.completed == true ? 'checkTodo':''">
+                {{usercom.todo}}
+              </label>
+            </div>
+            <div id="btn_todo">
+              <a class="btn btn-outline-white bg-white text-white"type="button"><img src="../../assets/tasks.png" style="width: 20px; height: 20px;"></a>
+            </div>
+
+
+</div>
+</div>
+
+
+
+</body>

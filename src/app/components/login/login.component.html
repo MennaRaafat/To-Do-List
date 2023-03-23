@@ -21,7 +21,7 @@
             <input type="text" name="quoteInput" [(ngModel)]="quoteInput" required>
             <label>Favourite Qoute</label>
           </div>
-          <a [routerLink]="['/user']" (click)="addUser()">
+          <a [routerLink]="['/user']" (click)="addUser()" (click)="change()">
             <span></span>
             <span></span>
             <span></span>

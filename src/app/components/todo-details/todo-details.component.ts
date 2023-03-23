@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TodosService } from '../todos.service';
+import { TodosService } from 'src/app/services/todos.service';
 import { Todo } from '../todos/models/todo';
 
 @Component({
