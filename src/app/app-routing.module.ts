@@ -7,6 +7,7 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
 import { DeletedComponent } from './components/deleted/deleted.component';
 import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'user',component:TodosComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'delete',component:DeletedComponent},
   {path:'details/:id',component:TodoDetailsComponent},
   {path:'completed',component:CompletedComponent},
+  {path:'register',component:RegisterComponent},
   {path:'**',component:NotFoundComponent},
 ];
 

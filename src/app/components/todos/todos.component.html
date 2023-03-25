@@ -28,20 +28,6 @@
           />
         </div>
       </form>
-
-      <!-- <div *ngFor="let todo of _todo.todos; let i = index" class="d-flex m-3">
-        <div id="todo">
-          <input [disabled]="todo.completed == true" type="checkbox" />
-          <label [ngClass]="todo.completed == true ? 'checkTodo':''">
-            {{todo.todo}}
-          </label>
-        </div>
-        <div id="btn_todo">
-          <a class="btn btn-outline-white bg-white text-white" type="button" style="margin-right:15px;" (click)="details(i)" [routerLink]="['/details,id']"><img src="../../assets/file.png" style="width: 20px; height: 20px;"></a>
-          <a class="btn btn-outline-white bg-white text-white" style="margin-right:15px;" type="button" (click)="addFav(i)"><img src="../../assets/favourite.png" style="width: 20px; height: 20px;"></a>
-          <a class="btn btn-outline-white bg-white text-white"type="button" (click)="deleteTodo(i)"><img src="../../assets/delete.png" style="width: 20px; height: 20px;"></a>
-        </div>
-      </div> -->
       <app-todo *ngFor="let todo of todos;" [todo]="todo"></app-todo>
     </div>
   </body>

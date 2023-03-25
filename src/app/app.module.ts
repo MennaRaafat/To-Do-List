@@ -12,6 +12,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { TodosComponent } from './components/todos/todos.component';
     TodoComponent,
     TodoDetailsComponent,
     NotFoundComponent,
-    CompletedComponent
+    CompletedComponent,
+    RegisterComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

@@ -21,13 +21,15 @@
             <input type="text" name="quoteInput" [(ngModel)]="quoteInput" required>
             <label>Favourite Qoute</label>
           </div>
-          <a [routerLink]="['/user']" (click)="addUser()" (click)="change()">
+          <a [routerLink]="['/user']" (click)="change()">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
           </a>
+          <!-- (click)="addUser()" -->
+          <a [routerLink]="['/register']">Don't have an account?</a>
       </div>
 </body>
 </html>

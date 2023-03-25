@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../components/todos/models/todo';
 
 
@@ -6,23 +7,29 @@ import { User } from '../components/todos/models/todo';
   providedIn: 'root'
 })
 export class UsersService {
-
-  console = console;
-
   users:User[]=[]
 
-constructor() { }
+constructor(private router:Router) { }
 
-  createUser(userInput: String,quoteInput:String) {
-    if (userInput.length!= 0 && quoteInput.length!=0) {
-      const userData = { username: userInput, quote:quoteInput};
-      this.users.push(userData);
+  createUser(usernameInput: String,quoteInput:String,passwordInput:String) {
+      const userData = { username: usernameInput, quote:quoteInput, password:passwordInput};
+      // this.users.push(userData);
+      // localStorage.setItem('Users',JSON.stringify(this.users));
+      if(localStorage.getItem("Users")){
+        const usersRegistered=localStorage.getItem('Users')
+        if(usersRegistered){
+        const users_log=JSON.parse(usersRegistered)
+        const users=users_log.map((elem:any)=>{
+          if(elem.username == usernameInput){
+            this.router.navigate(['/'])
+          }else{
+            this.users.push(userData);
+            localStorage.setItem('Users',JSON.stringify(this.users));
+            this.router.navigate(['/'])
+          }
+        })
+        }
     }
-    this.console.log(this.users);
   }
-
-    // getUserName(username:string) {
-  //   return this.users.find((user)=> user.username)
-  // }
 
 }

@@ -6,5 +6,6 @@ export interface Todo{
 
 export interface User{
     username:String,
-    quote:String
+    quote:String,
+    password:String
 }

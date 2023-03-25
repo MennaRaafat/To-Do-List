@@ -19,12 +19,12 @@ export class LoginComponent {
     })
   }
 
-  addUser() {
-    this._user.createUser(
-      this.userInput,
-      this.quoteInput
-    );
-  }
+  // addUser() {
+  //   this._user.createUser(
+  //     this.userInput,
+  //     this.quoteInput
+  //   );
+  // }
   change() {
     this._auth.change()
   } 
