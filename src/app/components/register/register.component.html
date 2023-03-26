@@ -6,17 +6,9 @@
 </head>
 <body>
 	<div class="main">  	
-		<!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
-		<!--[disabled]="!regForm.valid" -->
-		<!-- #regForm="ngForm" -->
-		<!-- (ngSubmit)="addUser()" -->
-		<!-- [(ngModel)]="username" -->
-		<!-- [(ngModel)]="quote" -->
-		<!-- [(ngModel)]="password"  -->
 			<div class="signup">
 				<form>
-					<!-- ng-untouched ng-pristine ng-valid -->
-					<label for="chk" aria-hidden="true">Sign up</label>
+					<label for="chk" aria-hidden="true"></label>
 
 					<label for="username">username</label>
 					<input class="form-control " name="usernameInput" [(ngModel)]="usernameInput"   type="text" id="username" required>
@@ -46,14 +38,6 @@
 					<button type="button" (click)="addUser()">Sign up</button>
 				</form>
 			</div>
-			<!-- <div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required>
-					<input type="password" name="pswd" placeholder="Password" required>
-					<button>Login</button>
-				</form>
-			</div> -->
 	</div>
 </body>
 </html>

@@ -32,4 +32,22 @@ constructor(private router:Router) { }
     }
   }
 
+  CheckUser(usernameInput: String,passwordInput:String){
+    const userData = { username: usernameInput, password:passwordInput};
+    if(localStorage.getItem("Users")){
+      const usersRegistered=localStorage.getItem('Users')
+      if(usersRegistered){
+        const users_log=JSON.parse(usersRegistered)
+        const users=users_log.map((elem:any)=>{
+          if(elem.username == usernameInput){
+            if(elem.password == passwordInput)
+            this.router.navigate(['/user'])
+          }else{
+            this.router.navigate(['/'])
+          }
+        })
+      }
+    }
+  }
+
 }

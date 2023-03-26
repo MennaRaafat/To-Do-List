@@ -15,7 +15,6 @@ export class NavbarComponent {
   constructor(private user: UsersService,private _todoInfo:TodosService) {
     
    }
-
   loggedUser=this.user.users.map(el=>el.username);
   totalElm=this._todoInfo;
 
