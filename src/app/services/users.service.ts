@@ -43,7 +43,7 @@ constructor(private router:Router) { }
             if(elem.password == passwordInput)
             this.router.navigate(['/user'])
           }else{
-            this.router.navigate(['/'])
+            this.router.navigate(['/register'])
           }
         })
       }
