@@ -7,17 +7,17 @@
 <body>
 	<div class="main">  	
 			<div class="signup">
-				<form>
+				<form #reqForm="ngForm">
 					<label for="chk" aria-hidden="true"></label>
 
 					<label for="username">username</label>
-					<input class="form-control " name="usernameInput" [(ngModel)]="usernameInput"   type="text" id="username" required>
+					<input class="form-control " name="usernameInput" minlength="3" required [(ngModel)]="usernameInput"  type="text" id="username">
 				  <label for="quote">Quote:</label>
 				  <input class="form-control" type="text" name="quoteInput" [(ngModel)]="quoteInput" id="quote" required>
 
 				  <label for="password">Password</label>
 				  <input class="form-control" name="passwordInput" [(ngModel)]="passwordInput" type="password" id="password" required>
-					<button type="button"  (click)="addUser()">Sign up</button>
+					<button class="btn btn-success m-3" type="button" [disabled]="!reqForm.valid"  (click)="addUser()">Sign up</button>
 				</form>
 			</div>
 	</div>
