@@ -1,5 +1,11 @@
 <app-navbar></app-navbar>
-<div *ngIf="todo">
-<h1>{{todo.id}}</h1>
-<h1>{{todo.todo}}</h1>  
+<div id="fav">
+    <h1 class="m-5"style="text-align: center;">Todo Details</h1>
+<div id="todo-border" style="margin-right:60%;"*ngIf="todo">
+    <div id="todo">
+{{todo.id}}
+{{todo.todo}}
 </div>
+    </div>
+
+  </div>

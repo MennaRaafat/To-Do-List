@@ -10,13 +10,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
-  {path:'user',component:TodosComponent},
   {path:'favourite',component:FavouriteComponent},
   {path:'delete',component:DeletedComponent},
   {path:'details/:id',component:TodoDetailsComponent},
   {path:'completed',component:CompletedComponent},
   {path:'register',component:RegisterComponent},
+  {path:'user',component:TodosComponent},
   {path:'**',component:NotFoundComponent},
+
 ];
 
 @NgModule({

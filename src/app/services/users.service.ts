@@ -9,12 +9,12 @@ import { User } from '../components/todos/models/todo';
 export class UsersService {
   users:User[]=[]
  username!:String
+ userQuote!:String
 constructor(private router:Router) { }
 
   createUser(usernameInput: String,quoteInput:String,passwordInput:String) {
       const userData = { username: usernameInput, quote:quoteInput, password:passwordInput};
-      // this.users.push(userData);
-      // localStorage.setItem('Users',JSON.stringify(this.users));
+       this.userQuote=quoteInput;
       if(localStorage.getItem("Users")==userData.username){
         const usersRegistered=localStorage.getItem('Users')
         console.log(usersRegistered)
@@ -53,18 +53,22 @@ constructor(private router:Router) { }
               console.log(elem.password)
               console.log(passwordInput)
               this.username=usernameInput
+              this.userQuote=elem.quote
               this.router.navigate(['/user'])
             }
           }
-          else{
-            // console.log(users)
-            this.router.navigate(['/register'])
-          }
+          // else{
+          //   // console.log(users)
+          //   this.router.navigate(['/register'])
+          // }
         })
       }
-      else{
-        this.router.navigate(['/register'])
-      }
+      // else{
+      //   this.router.navigate(['/register'])
+      // }
+    }
+    else{
+      this.router.navigate(['/register'])
     }
   }
 

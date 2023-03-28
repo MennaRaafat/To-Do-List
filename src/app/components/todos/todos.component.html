@@ -16,14 +16,12 @@
         <h2>To-Do List App</h2>
       </div>
  
-      <h1 style="text-align: center;">{{userQuote}}</h1>
-
+      <h1 style="text-align: center;">{{userQuotes}}</h1>
       <form id="styling">
         <div class="input-group w-75 mb-3">
           <input type="text" class="form-control"placeholder="Add Your To Do..."
             name="data"
-            [(ngModel)]="data"
-          />
+            [(ngModel)]="data"/>
           <input class="btn bg-white" type="submit" value="Add To Do" class="todo-submit" (click)="addTodo()" (click)="getTodo()"/>
         </div>
       </form>

@@ -22,7 +22,7 @@ constructor(private _user: UsersService, private _todo:TodosService,private _htt
   this.todos=this._todo.todos;
 }
 
-userQuote=this._user.users.map(el=>el.quote);
+userQuotes=this._user.userQuote;
 
 addTodo(){
 this._todo.todoCreate(this.data);
