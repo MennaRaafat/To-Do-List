@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { TodoComponent } from 'src/app/components/todo/todo.component' ;
 import { TodosService } from 'src/app/services/todos.service';
@@ -11,35 +12,40 @@ import { Todo } from './models/todo';
   providers:[]
 })
 
-export class TodosComponent {
+export class TodosComponent implements OnInit{
 
 data:String="";
 todos!:Todo[];
+// todo
 
-constructor(private _user: UsersService, private _todo:TodosService) { 
+constructor(private _user: UsersService, private _todo:TodosService,private _http:HttpClient) { 
   this.todos=this._todo.todos;
+  // this.todo=this._todo
 }
 
 userQuote=this._user.users.map(el=>el.quote);
 
 addTodo(){
 this._todo.todoCreate(this.data);
+console.log(this.todos);
  this.data="";
- console.log(this.todos);
 };
 
+ngOnInit():void{
+  this.getTodo()
+}
 
-// addFav(i:number){
-//   this._todo.addFavourite(i);
-//     }
+getTodo() {
+  this._todo.getAllTodos().subscribe(data=>{
+    // this.todos=data.todos
+    console.log(data.todos)
+  })
 
-// deleteTodo(id:number){
-// this._todo.deleteTodo(id);
-// }
-
-
+}
 
 
 }
+
+
 
 

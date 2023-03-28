@@ -11,12 +11,21 @@ import { Todo } from '../todos/models/todo';
 
 export class TodoDetailsComponent {
 id:number;
-todo:any;
+todo!:Todo;
 
 constructor(private _activateRoute:ActivatedRoute , private _todo:TodosService){
 
   this.id = this._activateRoute.snapshot.params['id'];
-  this.todo = this._todo.getTodoById(this.id);
+  // this.todo = this._todo.getTodoById(this.id);
 
 }
+
+ngOnInit(): void {
+  this.id = this._activateRoute.snapshot.params['id']
+  this._todo.getOneTodo(this.id).subscribe((todo:any)=>{
+    this.todo = todo.body
+    console.log(this.todo);
+  })
+}
+
 }

@@ -15,6 +15,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

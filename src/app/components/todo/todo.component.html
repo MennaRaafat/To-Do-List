@@ -8,7 +8,7 @@
 
      </div>
     <div id="btn_todo"> 
-      <a class="btn btn-outline-white bg-white text-white" type="button" (click)="navigateToDetails()" style="margin-right:15px;"><img src="../../assets/file.png" style="width: 20px; height: 20px;"></a>
+      <a class="btn btn-outline-white bg-white text-white" type="button" [routerLink]="['/details',todo.id]" style="margin-right:15px;"><img src="../../assets/file.png" style="width: 20px; height: 20px;"></a>
 
       <a class="btn btn-outline-white bg-white text-white" style="margin-right:15px;" type="button" (click)="addFav(todo.id)"><img src="../../assets/favourite.png" style="width: 20px; height: 20px;"></a>
 

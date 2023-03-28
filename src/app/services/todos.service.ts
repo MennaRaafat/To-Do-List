@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../components/todos/models/todo';
 import { Pipe } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +22,7 @@ export class TodosService {
   totoDeleted: Todo[] = []
   todoCompleted: Todo[] = []
 
-  constructor() { }
+  constructor(private _http:HttpClient) { }
   todoCreate(todoInput: String) {
     let id = 0;
     if (!this.todos.length) {
@@ -105,4 +106,19 @@ export class TodosService {
 
   }
 
+
+
+  getAllTodos(): Observable<any>{
+       return this._http.get('https://dummyjson.com/todos')
+  }
+
+  getOneTodo(id:number) {
+    return this._http.get(`https://dummyjson.com/todos/${id}` , {
+      observe:"response" ,
+      responseType:'json'
+    })
+  }
+
+
+  
 }

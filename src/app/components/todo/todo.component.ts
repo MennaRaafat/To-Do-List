@@ -12,6 +12,7 @@ export class TodoComponent {
 
 
   @Input()todo!:Todo;
+  @Input() Otodo :Todo | undefined
 
 
 constructor(private _router:Router, private _todo:TodosService) { }
@@ -30,4 +31,5 @@ navigateToDetails() {
 cTodo(id:number){
   this._todo.completeTodo(id);
 }
+
 }
