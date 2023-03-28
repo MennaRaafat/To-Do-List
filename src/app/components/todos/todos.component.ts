@@ -43,12 +43,12 @@ getTodo() {
 
 }
 
-// postTodo(){
-//   this._todo.PostTodo().subscribe((data)=>{
-//     console.log(data);
-//     this.PostJsonValue=data;
-//   })
-// }
+postTodo(){
+  this._todo.PostTodo().subscribe((data)=>{
+    console.log(data);
+    this.PostJsonValue=data;
+  })
+}
 
 }
 
