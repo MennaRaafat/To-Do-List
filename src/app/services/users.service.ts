@@ -8,27 +8,33 @@ import { User } from '../components/todos/models/todo';
 })
 export class UsersService {
   users:User[]=[]
-
+ username!:String
 constructor(private router:Router) { }
 
   createUser(usernameInput: String,quoteInput:String,passwordInput:String) {
       const userData = { username: usernameInput, quote:quoteInput, password:passwordInput};
       // this.users.push(userData);
       // localStorage.setItem('Users',JSON.stringify(this.users));
-      if(localStorage.getItem("Users")){
+      if(localStorage.getItem("Users")==userData.username){
         const usersRegistered=localStorage.getItem('Users')
+        console.log(usersRegistered)
         if(usersRegistered){
         const users_log=JSON.parse(usersRegistered)
         const users=users_log.map((elem:any)=>{
-          if(elem.username == usernameInput){
-            this.router.navigate(['/'])
-          }else{
-            this.users.push(userData);
-            localStorage.setItem('Users',JSON.stringify(this.users));
-            this.router.navigate(['/'])
+          if(elem.password == passwordInput){
+            // this.router.navigate(['/'])
           }
+          // }else{
+          //   this.users.push(userData);
+          //   localStorage.setItem('Users',JSON.stringify(this.users));
+            this.router.navigate(['/'])
+          // }
         })
         }
+    }else{
+      this.users.push(userData);
+      localStorage.setItem('Users',JSON.stringify(this.users));
+      this.router.navigate(['/'])
     }
   }
 
@@ -36,16 +42,28 @@ constructor(private router:Router) { }
     const userData = { username: usernameInput, password:passwordInput};
     if(localStorage.getItem("Users")){
       const usersRegistered=localStorage.getItem('Users')
+      console.log(usersRegistered)
       if(usersRegistered){
         const users_log=JSON.parse(usersRegistered)
         const users=users_log.map((elem:any)=>{
           if(elem.username == usernameInput){
-            if(elem.password == passwordInput)
-            this.router.navigate(['/user'])
-          }else{
+            console.log(elem.username)
+            console.log(usernameInput)
+            if(elem.password == passwordInput){
+              console.log(elem.password)
+              console.log(passwordInput)
+              this.username=usernameInput
+              this.router.navigate(['/user'])
+            }
+          }
+          else{
+            // console.log(users)
             this.router.navigate(['/register'])
           }
         })
+      }
+      else{
+        this.router.navigate(['/register'])
       }
     }
   }
