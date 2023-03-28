@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { TodoComponent } from 'src/app/components/todo/todo.component' ;
@@ -16,11 +16,10 @@ export class TodosComponent implements OnInit{
 
 data:String="";
 todos!:Todo[];
-// todo
+PostJsonValue:any;
 
 constructor(private _user: UsersService, private _todo:TodosService,private _http:HttpClient) { 
   this.todos=this._todo.todos;
-  // this.todo=this._todo
 }
 
 userQuote=this._user.users.map(el=>el.quote);
@@ -33,16 +32,22 @@ console.log(this.todos);
 
 ngOnInit():void{
   this.getTodo()
+  this.postTodo()
 }
 
 getTodo() {
   this._todo.getAllTodos().subscribe(data=>{
-    // this.todos=data.todos
     console.log(data.todos)
   })
 
 }
 
+postTodo(){
+  this._todo.PostTodo().subscribe((data)=>{
+    console.log(data);
+    this.PostJsonValue=data;
+  })
+}
 
 }
 

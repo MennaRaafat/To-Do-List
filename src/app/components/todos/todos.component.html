@@ -24,8 +24,7 @@
             name="data"
             [(ngModel)]="data"
           />
-          <input class="btn bg-white" type="submit" value="Add To Do" class="todo-submit" (click)="addTodo()" (click)="getTodo()"
-          />
+          <input class="btn bg-white" type="submit" value="Add To Do" class="todo-submit" (click)="addTodo()" (click)="getTodo()"/>
         </div>
       </form>
       <app-todo *ngFor="let todo of todos;" [todo]="todo"></app-todo>

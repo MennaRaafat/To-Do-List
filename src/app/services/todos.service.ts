@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../components/todos/models/todo';
 import { Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -119,6 +119,16 @@ export class TodosService {
     })
   }
 
-
+PostTodo(){
+  const header = new HttpHeaders({
+    contentType:'application/json'
+  })
+  let body={
+    todo:"Hi",
+    completed:false,
+    userId:27
+  }
+  return this._http.post('https://dummyjson.com/todos/add',body,{headers:header})
+}
   
 }
