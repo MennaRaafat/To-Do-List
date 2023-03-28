@@ -15,7 +15,8 @@ import { TodosComponent } from './components/todos/todos.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TodoInterceptorInterceptor } from './todo-interceptor.interceptor';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS , useClass:TodoInterceptorInterceptor , multi:true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

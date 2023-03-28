@@ -32,22 +32,23 @@ console.log(this.todos);
 
 ngOnInit():void{
   this.getTodo()
-  this.postTodo()
+  // this.postTodo()
 }
 
 getTodo() {
   this._todo.getAllTodos().subscribe(data=>{
-    console.log(data.todos)
+    // console.log(data.todos)
+    return data.todos
   })
 
 }
 
-postTodo(){
-  this._todo.PostTodo().subscribe((data)=>{
-    console.log(data);
-    this.PostJsonValue=data;
-  })
-}
+// postTodo(){
+//   this._todo.PostTodo().subscribe((data)=>{
+//     console.log(data);
+//     this.PostJsonValue=data;
+//   })
+// }
 
 }
 

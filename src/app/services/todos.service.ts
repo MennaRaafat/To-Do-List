@@ -119,16 +119,16 @@ export class TodosService {
     })
   }
 
-PostTodo(){
-  const header = new HttpHeaders({
-    contentType:'application/json'
-  })
-  let body={
-    todo:"Hi",
-    completed:false,
-    userId:27
-  }
-  return this._http.post('https://dummyjson.com/todos/add',body,{headers:header})
-}
+// PostTodo(){
+//   const header = new HttpHeaders({
+//     contentType:'application/json'
+//   })
+//   let body={
+//     todo:"Hi",
+//     completed:false,
+//     userId:27
+//   }
+//   return this._http.post('https://dummyjson.com/todos/add',body,{headers:header})
+// }
   
 }
